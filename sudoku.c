@@ -90,7 +90,7 @@ int is_valid(Node* n)
       // Inicializar el arreglo de vistos en 0
       for (i = 0; i < 10; i++) 
       {
-         seen[i] = 0;
+         visto[i] = 0;
       }
         for (p = 0; p < 9; p++) 
         {
