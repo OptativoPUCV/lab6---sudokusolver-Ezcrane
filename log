@@ -179,3 +179,30 @@ Fri 17 May 2024 09:55:46 PM UTC:
  tests:  2|4
 total_score: 15/70
 64e48b0
+Fri 17 May 2024 11:48:45 PM UTC: 
+ sudoku.c | 64 ++++++++++++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 40 insertions(+), 24 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:93:10: error: ‘seen’ undeclared (first use in this function); did you mean ‘setenv’?
+   93 |          seen[i] = 0;
+      |          ^~~~
+      |          setenv
+sudoku.c:93:10: note: each undeclared identifier is reported only once for each function it appears in
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+test.c:263: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+af88919

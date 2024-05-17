@@ -45,52 +45,68 @@ void print_node(Node* n){
 
 int is_valid(Node* n)
 {
-    // Check rows
-    for (int i = 0; i < 9; i++)
-    {
-        int row_check[10] = {0};
-        for (int j = 0; j < 9; j++)
-        {
-            if (row_check[n->sudo[i][j]] == 1)
+   int i, j, k, p;
+   int visto[10];
+
+   for(i = 0; i < 9; i++)
+   {
+      for(k = 0; k < 10; k++)
+      {
+         visto[k] = 0;   
+      }
+      for(j = 0; j < 9; j++)
+      {
+         int num = n->sudo[i][j];
+         if(num != 0)
+         {
+            if(visto[num] == 1)
             {
-                return 0;
+               return 0;
             }
-            row_check[n->sudo[i][j]] = 1;
-        }
-    }
+            visto[num] = 1;
+         }
+      }
+   }
 
-    // Check columns
-    for (int j = 0; j < 9; j++)
-    {
-        int col_check[10] = {0};
-        for (int i = 0; i < 9; i++)
+   for(j = 0; j < 9; j++)
+   {
+      for(k = 0; k < 10; k++)
+      {
+         visto[k] = 0;
+      }
+      for(i = 0; i < 9; i++)
+      {
+         int num = n->sudo[i][j];
+         if(num != 0)
+         {
+            if(visto[num] == 1) return 0;
+            visto[num] = 1;
+         }
+      }
+   }
+
+   for (k = 0; k < 9; k++) 
+   {
+      // Inicializar el arreglo de vistos en 0
+      for (i = 0; i < 10; i++) 
+      {
+         seen[i] = 0;
+      }
+        for (p = 0; p < 9; p++) 
         {
-            if (col_check[n->sudo[i][j]] == 1)
+            int row = 3 * (k / 3) + (p / 3);
+            int col = 3 * (k % 3) + (p % 3);
+            int num = n->sudo[row][col];
+            if (num != 0) 
             {
-                return 0;
+                if (seen[num] == 1) 
+                {
+                    return 0; // Número repetido en la submatriz
+                }
+                seen[num] = 1;
             }
-            col_check[n->sudo[i][j]] = 1;
         }
-    }
-
-    // Check 3x3 submatrices
-    for (int k = 0; k < 9; k++)
-    {
-        int submatrix_check[10] = {0};
-        for (int p = 0; p < 9; p++)
-        {
-            int i = 3 * (k / 3) + (p / 3);
-            int j = 3 * (k % 3) + (p % 3);
-
-            if (submatrix_check[n->sudo[i][j]] == 1)
-            {
-                return 0;
-            }
-            submatrix_check[n->sudo[i][j]] = 1;
-        }
-    }
-
-    return 1;
+   return 1;
 }
 
 
