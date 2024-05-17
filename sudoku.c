@@ -99,11 +99,11 @@ int is_valid(Node* n)
             int num = n->sudo[row][col];
             if (num != 0) 
             {
-                if (seen[num] == 1) 
+                if (visto[num] == 1) 
                 {
                     return 0; // Número repetido en la submatriz
                 }
-                seen[num] = 1;
+                visto[num] = 1;
             }
         }
    return 1;
