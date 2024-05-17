@@ -19,3 +19,9 @@ sudoku.c:59:13: error: ‘new’ undeclared (first use in this function)
 sudoku.c:59:13: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 431fad1
+Fri 17 May 2024 08:48:34 PM UTC: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|5
+total_score: 0/70
+f208809
