@@ -85,3 +85,9 @@ sudoku.c:57:12: error: ‘j’ undeclared (first use in this function)
       |            ^
 Compilation failed
 8a63e38
+Fri 17 May 2024 09:03:20 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|4
+total_score: 15/70
+948fb4d
