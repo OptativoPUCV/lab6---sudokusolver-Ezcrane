@@ -48,29 +48,54 @@ int is_valid(Node* n)
    
 int is_valid(Node* n)
 {
-    int rows[9][10] = {0};
-    int columns[9][10] = {0};
-    int submatrices[9][10] = {0};
-
+    // Check rows
     for (int i = 0; i < 9; i++)
     {
+        int row_check[10] = {0};
         for (int j = 0; j < 9; j++)
         {
-            int num = n->sudo[i][j];
-            if (num != 0)
+            if (row_check[n->sudo[i][j]] == 1)
             {
-                if (rows[i][num] == 1 || columns[j][num] == 1 || submatrices[3 * (i / 3) + (j / 3)][num] == 1)
-                    return 0;
-
-                rows[i][num] = 1;
-                columns[j][num] = 1;
-                submatrices[3 * (i / 3) + (j / 3)][num] = 1;
+                return 0;
             }
+            row_check[n->sudo[i][j]] = 1;
+        }
+    }
+
+    // Check columns
+    for (int j = 0; j < 9; j++)
+    {
+        int col_check[10] = {0};
+        for (int i = 0; i < 9; i++)
+        {
+            if (col_check[n->sudo[i][j]] == 1)
+            {
+                return 0;
+            }
+            col_check[n->sudo[i][j]] = 1;
+        }
+    }
+
+    // Check 3x3 submatrices
+    for (int k = 0; k < 9; k++)
+    {
+        int submatrix_check[10] = {0};
+        for (int p = 0; p < 9; p++)
+        {
+            int i = 3 * (k / 3) + (p / 3);
+            int j = 3 * (k % 3) + (p % 3);
+
+            if (submatrix_check[n->sudo[i][j]] == 1)
+            {
+                return 0;
+            }
+            submatrix_check[n->sudo[i][j]] = 1;
         }
     }
 
     return 1;
 }
+
 
 
 List* get_adj_nodes(Node* n)
