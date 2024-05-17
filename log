@@ -71,3 +71,17 @@ sudoku.c:59:12: error: ‘adj_node’ undeclared (first use in this function)
 sudoku.c:59:12: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 a1c7c09
+Fri 17 May 2024 09:02:36 PM UTC: 
+ sudoku.c | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:56:8: error: ‘i’ undeclared (first use in this function)
+   56 |    for(i=0;i<9;i++){
+      |        ^
+sudoku.c:56:8: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:57:12: error: ‘j’ undeclared (first use in this function)
+   57 |        for(j=0;j<9;j++){
+      |            ^
+Compilation failed
+8a63e38
