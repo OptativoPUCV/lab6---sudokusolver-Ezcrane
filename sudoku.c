@@ -65,7 +65,6 @@ List* get_adj_nodes(Node* n)
                pushBack(list, new);
             }
          }
-         break;
       }
    }
    return list;
