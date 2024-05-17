@@ -125,7 +125,8 @@ List* get_adj_nodes(Node* n)
             {
                Node * new = copy(n);
                new->sudo[i][j] = x;
-               pushBack(list, new);
+               if(is_valid(new))
+                  pushBack(list, new);
             }
             break;
          }
