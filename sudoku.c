@@ -151,7 +151,7 @@ Node* DFS(Node* initial, int* cont)
 {
    Stack * S = createStack();
    push(S, initial);
-   while(S != NULL)
+   while(sizeof(S) != 0)
    {
       Node * ini = pop(S);
       if(is_final(ini)) return ini;
