@@ -153,18 +153,18 @@ Node* DFS(Node* initial, int* cont)
    push(S, initial);
    while(!is_empty(S))
    {
-      Node* ini = pop(S);
+      pop(S);
       if(is_final(ini)) return ini;
       List * adj = get_adj_nodes(ini);
-      if(is_empty(adj)) return ini;
       while(!is_empty(adj))
       {
          Node * adjunt = first(adj);
          push(S, adjunt);
          next(adj);
       }   
-      free(ini);
+      
    }
+   free(ini);
   return NULL;
 }
 
