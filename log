@@ -416,3 +416,13 @@ sudoku.c:157:30: error: ‘ini’ undeclared (first use in this function); did y
 sudoku.c:157:30: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 ed89190
+Sat 18 May 2024 12:43:32 AM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:156:19: error: void value not ignored as it ought to be
+  156 |       Node* ini = pop(S);
+      |                   ^~~
+Compilation failed
+69f7bca
