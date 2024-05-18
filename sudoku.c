@@ -155,13 +155,13 @@ Node* DFS(Node* initial, int* cont)
    {
       Node* ini = top(S);
       pop(S);
-      if(is_final(ini)) return ini;
+      if(is_final(ini) == 1) return ini;
       List * adj = get_adj_nodes(ini);
       Node * adjun = first(adj);
       while(adjun != NULL)
       {
          push(S, adjun);
-         next(adj);
+         adj = next(adj);
       }   
       free(ini);
       (*cont)++;
