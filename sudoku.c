@@ -164,7 +164,7 @@ Node* DFS(Node* initial, int* cont)
          next(adj);
       }   
       free(ini);
-      *cont++;
+      (*cont)++;
    }
   return NULL;
 }
