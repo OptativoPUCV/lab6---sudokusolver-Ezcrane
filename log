@@ -443,3 +443,20 @@ sudoku.c:161:7: note: ...this statement, but the latter is misleadingly indented
 cc1: all warnings being treated as errors
 Compilation failed
 9e399c5
+Sat 18 May 2024 12:50:22 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:156:19: error: void value not ignored as it ought to be
+  156 |       Node* ini = pop(S);
+      |                   ^~~
+sudoku.c:160:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  160 |       if(!is_empty(adj));
+      |       ^~
+sudoku.c:161:7: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  161 |       {
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+40cbfad
