@@ -153,7 +153,7 @@ Node* DFS(Node* initial, int* cont)
    push(S, initial);
    while(!is_empty(S))
    {
-      pop(S);
+      Node* ini = pop(S);
       if(is_final(ini)) return ini;
       List * adj = get_adj_nodes(ini);
       while(!is_empty(adj))
