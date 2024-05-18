@@ -151,13 +151,13 @@ Node* DFS(Node* initial, int* cont)
 {
    Stack * S = createStack();
    push(S, initial);
-   while(S != NULL)
+   while(!is_empty(S))
    {
       Node* ini = pop(S);
       if(is_final(ini)) return ini;
       List * adj = get_adj_nodes(ini);
       if(is_empty(adj)) return ini;
-      while(adj != NULL)
+      while(!is_empty(adj));
       {
          Node * adjunt = first(adj);
          push(S, adjunt);
