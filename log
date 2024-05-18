@@ -341,3 +341,19 @@ sudoku.c:162:21: error: invalid use of incomplete typedef ‘List’
       |                  ~~~^~~
 Compilation failed
 518a365
+Sat 18 May 2024 12:23:46 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:156:20: error: void value not ignored as it ought to be
+  156 |       Node * ini = pop(S);
+      |                    ^~~
+sudoku.c:162:21: error: invalid use of undefined type ‘struct List’
+  162 |          push(S, adj[i]);
+      |                     ^
+sudoku.c:162:21: error: invalid use of incomplete typedef ‘List’
+  162 |          push(S, adj[i]);
+      |                  ~~~^~~
+Compilation failed
+295674f

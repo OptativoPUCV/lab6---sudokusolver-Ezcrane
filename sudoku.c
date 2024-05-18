@@ -151,12 +151,12 @@ Node* DFS(Node* initial, int* cont)
 {
    Stack * S = createStack();
    push(S, initial);
-   while(sizeof(S) != 0)
+   while(S != NULL)
    {
       Node * ini = pop(S);
       if(is_final(ini)) return ini;
       List * adj = get_adj_nodes(ini);
-      int j = sizeof(adj), i;
+      int j = get_size(adj), i;
       for(i = 0; i > j; i++)
       {
          push(S, adj[i]);
