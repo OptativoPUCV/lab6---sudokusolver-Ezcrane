@@ -497,3 +497,8 @@ sudoku.c:167:9: error: ‘ini’ undeclared (first use in this function); did yo
 sudoku.c:167:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 787172e
+Sat 18 May 2024 07:29:50 AM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  0|0
+3cf5453
