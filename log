@@ -386,3 +386,18 @@ sudoku.c:156:14: error: unused variable ‘x’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 dcf201b
+Sat 18 May 2024 12:40:16 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:156:18: error: void value not ignored as it ought to be
+  156 |       Node * x = pop(S);
+      |                  ^~~
+sudoku.c:157:30: error: ‘ini’ undeclared (first use in this function); did you mean ‘int’?
+  157 |       if(is_final(x)) return ini;
+      |                              ^~~
+      |                              int
+sudoku.c:157:30: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+5655b2a
