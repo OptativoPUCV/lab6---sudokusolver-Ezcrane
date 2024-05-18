@@ -156,11 +156,13 @@ Node* DFS(Node* initial, int* cont)
       Node * ini = pop(S);
       if(is_final(ini)) return ini;
       List * adj = get_adj_nodes(ini);
-      int j = get_size(adj), i;
-      for(i = 0; i > j; i++)
+      if(is_empty(adj)) return ini;
+      while(adj != NULL)
       {
-         push(S, adj[i]);
-      }
+         Node * adjunt = first(adj);
+         push(S, adjunt);
+         next(adj);
+      }   
       free(ini);
    }
   return NULL;
